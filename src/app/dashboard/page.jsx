@@ -1,107 +1,113 @@
 "use client";
 
-import { useEffect } from 'react';  
-import Image from "next/image";
+import React, { useState } from 'react';   
+import Image from 'next/image';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
 const Dashboard = () => { 
+  const [page, setPage] = useState(0);
+  
+  const nextPage = () => setPage(page + 1);
+  
+  return (
+    <div>
+      {page === 0 && <IntroPage onNext={nextPage} />}
+      {page === 1 && <MainPage />} 
+    </div>
+  );
+};
 
-    return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <Image
-            className="dark:invert"
-            src="https://nextjs.org/icons/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
-          <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-            <li className="mb-2">
-              Get started by editing{" "}
-              <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                src/app/page.tsx
-              </code>
-              .
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
-  
-          <div className="flex gap-4 items-center flex-col sm:flex-row">
-            <a
-              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className="dark:invert"
-                src="https://nextjs.org/icons/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read our docs
-            </a>
-          </div>
-        </main>
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-          <a
-            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="https://nextjs.org/icons/file.svg"
-              alt="File icon"
-              width={16}
-              height={16}
-            />
-            Learn
-          </a>
-          <a
-            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="https://nextjs.org/icons/window.svg"
-              alt="Window icon"
-              width={16}
-              height={16}
-            />
-            Examples
-          </a>
-          <a
-            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="https://nextjs.org/icons/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Go to nextjs.org →
-          </a>
-        </footer>
-      </div>
-    );
+const IntroPage = ({ onNext }) => (
+  <div className=" tw-relative tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-black"> 
+    <video
+      autoPlay
+      loop
+      muted
+      className="tw-absolute tw-w-full tw-h-full tw-object-cover"
+      src="https://www.w3schools.com/howto/rain.mp4"
+      type="video/mp4"
+    />
+    
+    <div className="tw-relative tw-text-center tw-text-white tw-p-4">
+      <h1 className="tw-text-4xl tw-font-great-vibes">WE INVITE YOU TO CELEBRATE</h1>
+      <h2 className="tw-text-6xl tw-font-great-vibes">Hanson & Catherine</h2>
+      <p className="tw-text-2xl">SATURDAY, 02 MARCH 2024</p>
+      <p className="tw-text-xl">Dear</p>
+      <p className="tw-text-xl">Nama Tamu</p> 
+      <button onClick={onNext} className="tw-mt-4 tw-px-6 tw-py-2 tw-bg-white tw-text-black tw-rounded-full tw-font-bold">LET'S OPEN</button>
+    </div>
+  </div>
+);
+
+const MainPage = () => {
+  const brideImages = [
+    "https://picsum.photos/300/201",
+    "https://picsum.photos/300/202",
+    "https://picsum.photos/300/203",
+    "https://picsum.photos/300/204",
+    "https://picsum.photos/300/205"
+  ];
+
+  const groomImages = [
+    "https://picsum.photos/301/201",
+    "https://picsum.photos/301/202",
+    "https://picsum.photos/301/203",
+    "https://picsum.photos/301/204",
+    "https://picsum.photos/301/205",
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    autoplay: false,
+    autoplaySpeed: 2000,
   };
-  
-  export default Dashboard;
+
+  return (
+    <div>
+      <div className="tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-black">
+        <h1 className="tw-text-4xl tw-text-center tw-text-white">“Marry, for I will boast of your great numbers.”</h1>
+      </div>  
+
+      <div className="tw-relative tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-cover" style={{ backgroundImage: "url('/public/image/bride-bg.jpeg')" }}>
+        <div className="tw-absolute tw-top-10 tw-left-10 tw-text-white">
+          <h1 className="tw-text-4xl tw-font-great-vibes">Catherine</h1>
+        </div>
+        <div className="tw-absolute tw-bottom-10 tw-w-full tw-flex tw-justify-center">
+          <div className="tw-w-3/4 tw-overflow-hidden tw-relative">
+            <Slider {...settings}>
+              {brideImages.map((src, index) => (
+                <div key={index}>
+                  <Image src={src} alt={`Photo ${index + 1}`} width={300} height={200} className="tw-w-full tw-h-auto" />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div> 
+
+      <div className="tw-relative tw-h-screen tw-flex tw-items-center tw-justify-center tw-bg-cover" style={{ backgroundImage: "url('https://picsum.photos/1920/1080')" }}>
+        <div className="tw-absolute tw-top-10 tw-right-10 tw-text-white">
+          <h1 className="tw-text-4xl tw-font-great-vibes">Hanson</h1>
+        </div>
+        <div className="tw-absolute tw-bottom-10 tw-w-full tw-flex tw-justify-center">
+          <div className="tw-w-3/4 tw-overflow-hidden tw-relative">
+            <Slider {...settings}>
+              {groomImages.map((src, index) => (
+                <div key={index}>
+                  <Image src={src} alt={`Photo ${index + 1}`} width={300} height={200} className="tw-w-full tw-h-auto" />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
