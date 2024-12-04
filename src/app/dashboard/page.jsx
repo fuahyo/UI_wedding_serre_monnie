@@ -30,13 +30,22 @@ const IntroPage = ({ onNext }) => (
       type="video/mp4"
     />
     
-    <div className="tw-relative tw-text-center tw-text-white tw-p-4">
-      <h1 className="tw-text-4xl tw-font-great-vibes">WE INVITE YOU TO CELEBRATE</h1>
-      <h2 className="tw-text-6xl tw-font-great-vibes">Hanson & Catherine</h2>
-      <p className="tw-text-2xl">SATURDAY, 02 MARCH 2024</p>
-      <p className="tw-text-xl">Dear</p>
-      <p className="tw-text-xl">Nama Tamu</p> 
-      <button onClick={onNext} className="tw-mt-4 tw-px-6 tw-py-2 tw-bg-white tw-text-black tw-rounded-full tw-font-bold">LET'S OPEN</button>
+    <div className="tw-relative tw-text-center tw-text-white tw-p-8 tw-space-y-4">
+      <h1 className="tw-text-4xl font-lobster tw-tracking-wide tw-uppercase tw-text-shadow-lg">
+        WE INVITE YOU TO CELEBRATE
+      </h1>
+      <h2 className="tw-text-6xl font-lobster tw-tracking-tight tw-text-shadow-xl">
+        Hanson & Catherine
+      </h2>
+      <p className="tw-text-3xl tw-font-roboto tw-text-shadow-md">SATURDAY, 02 MARCH 2024</p>
+      <p className="tw-text-2xl tw-font-roboto tw-text-shadow-sm">Dear</p>
+      <p className="tw-text-2xl tw-font-roboto tw-text-shadow-sm">Nama Tamu</p>
+      <button
+        onClick={onNext}
+        className="tw-mt-6 tw-px-8 tw-py-3 tw-bg-white tw-text-black tw-rounded-full tw-font-bold tw-shadow-lg hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 transition duration-300"
+      >
+        LET'S OPEN
+      </button>
     </div>
   </div>
 );
