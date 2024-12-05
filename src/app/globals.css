@@ -18,14 +18,25 @@
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  src: url('/font/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-family: 'Baskervville';
+  src: url('/font/Baskervville-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/font/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tirelessly-Ly';
+  src:  url('/font/Tirelessly_Love_You.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -36,8 +47,20 @@ body {
   font-family: Arial, Helvetica,'Roboto', sans-serif; 
 }
 
-.font-lobster {
-  font-family: 'Lobster', cursive;
+.font-baskervville {
+  font-family: 'Baskervville', cursive;
+}
+
+.font-satoshi {
+  font-family: 'Satoshi', cursive;
+}
+
+.font-roboto {
+  font-family: 'Roboto', cursive;
+}
+
+.font-tirelessly {
+  font-family: 'Tirelessly-Ly', cursive, sans-serif; /* Fallbacks */
 }
 
 @layer utilities {
