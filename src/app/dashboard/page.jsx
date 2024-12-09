@@ -167,7 +167,7 @@ const MainPage = () => {
           </div>
         </section>
 
-        <section id='couple' className="tw-relative tw-h-[200vh] " style={{ backgroundImage: "url('/image/bride-bg.jpeg')" }}>
+        <section id='couple' className="tw-relative tw-h-[200vh] " style={{ backgroundImage: "url('/image/couple-bg.jpg')", backgroundSize: "cover",  backgroundPosition: "center",  backgroundRepeat: "no-repeat" }}>
           <div className="tw-absolute tw-top-10 tw-left-10 tw-text-white">
             <h1 className="tw-text-7xl tw-font-great-vibes font-tirelessly animate-section">Catherine</h1>
           </div>
@@ -187,7 +187,7 @@ const MainPage = () => {
         <section className="tw-relative tw-h-[20vh] tw-flex tw-items-center tw-bg-black tw-justify-center"> 
         </section>   
 
-        <section className="tw-relative tw-h-[200vh] " style={{ backgroundImage: "url('/image/couple-bg.jpg')" }}>
+        <section className="tw-relative tw-h-[200vh] " style={{ backgroundImage: "url('/image/couple-bg.jpg')", backgroundSize: "cover",  backgroundPosition: "center",  backgroundRepeat: "no-repeat" }}>
           <div className="tw-absolute tw-top-10 tw-right-10 tw-text-white animate-section">
             <h1 className="tw-text-7xl tw-font-great-vibes font-tirelessly ">Hansen</h1>
           </div>
@@ -204,7 +204,7 @@ const MainPage = () => {
           </div>
         </section> 
 
-        <section className="tw-relative tw-h-screen tw-flex tw-items-center tw-justify-center animate-section"> 
+        <section className="tw-relative tw-h-[120vh] tw-flex tw-items-center tw-justify-center animate-section"> 
           <div className="tw-w-3/4">    
             <p className='tw-text-gray-600 tw-mt-2 tw-text-white font-baskervville animate-section'>
               <span className="tw-text-7xl tw-font-bold tw-inline-block">O</span>ur first met on a sunny afternoon at a mutual friend's gathering. It wasn’t love at first sight, but something sparked between us—a connection that grew stronger with each passing conversation. What started as a shared laugh over an inside joke quickly blossomed into something more. Little did we know, this was the start of our forever.
@@ -212,13 +212,11 @@ const MainPage = () => {
           </div>
         </section>
 
-        <section className="tw-relative tw-flex tw-items-center tw-justify-center animate-section">
-          <div className="tw-relative tw-h-60 tw-flex tw-items-center  tw-justify-center">  </div> 
+        <section className="tw-relative tw-h-[120vh] tw-flex tw-items-center tw-justify-center animate-section"> 
           <div className='tw-text-center tw-my-8'>
               <p className='tw-text-gray-600 tw-mt-2 tw-text-white'>Lorem ipsum dolor sit amet consectetur</p>
               <h1 className="tw-text-6xl tw-text-white tw-text-center tw-font-bold tw-m-4 font-baskervville">42:11:39</h1>
-          </div>
-          <div className="tw-relative tw-h-60 tw-flex tw-items-center  tw-justify-center">  </div> 
+          </div> 
         </section>  
 
         <section id='schedule' className="tw-relative   tw-mx-20  tw-text-white">
@@ -326,12 +324,20 @@ const MainPage = () => {
           </div> 
         </section>  
 
-        <section className="tw-relative  tw-h-screen tw-w-screen tw-flex tw-items-center tw-justify-center" style={{ backgroundImage: "url('/image/couple-bg.jpg')" }}>
+        <section
+            className="tw-relative tw-h-screen tw-w-screen tw-flex tw-items-center tw-justify-center"
+            style={{
+              backgroundImage: "url('/image/couple-bg.jpg')",
+              backgroundSize: "cover", // Ensures the image covers the entire section
+              backgroundPosition: "center", // Centers the image
+              backgroundRepeat: "no-repeat" // Prevents the image from repeating
+            }}
+          >
           <div className="tw-text-center  tw-text-white animate-section">
-            <h1 className="tw-text-7xl font-baskervville ">Thank you</h1>
-            <p className="tw-text-lg font-satoshi ">back to:</p> 
+            <h1 className="tw-text-7xl font-baskervville tw-italic ">Thank you</h1>
+            <p className="tw-text-lg tw-p-3 font-satoshi ">back to:</p> 
             <ul className="tw-text-center tw-text-sm font-satoshi">
-              <li><a  href="#cover" className="tw-text-sm ">cover</a></li>
+              <li><a  href="/" className="tw-text-sm ">cover</a></li>
               <li><a  href="#intro" className="tw-text-sm ">intro</a></li>
               <li><a  href="#couple" className="tw-text-sm ">the couple</a></li>
               <li><a  href="#schedule" className="tw-text-sm ">schdule</a></li>
