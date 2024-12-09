@@ -88,3 +88,23 @@ body {
   animation: fadeInUp 2s ease-out forwards;
 }
 
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Background of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282828; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners */
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333; /* Color on hover */
+}
+
